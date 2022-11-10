@@ -5,13 +5,13 @@ pipeline{
         {
           
             steps{
-                git branch: 'main', url: 'https://github.com/Sonal0409/myansible'
+                git branch: 'main', url: 'https://github.com/karmasachin/myansible'
             }
         }
         stage('Ansible playbook')
         {
             steps{
-                ansiblePlaybook credentialsId: 'private-key1', disableHostKeyChecking: true, installation: 'myansible', inventory: 'dev.inv', playbook: 'playbook1.yml'
+                ansiblePlaybook credentialsId: 'ansiblehost', disableHostKeyChecking: true, installation: 'myansible', inventory: 'dev.inv', playbook: 'playbook1.yml’
             }
         }
     }
