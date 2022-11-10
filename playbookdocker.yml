@@ -4,7 +4,7 @@
   become_user: root
   tasks:
   - name: install tomcat
-    apt: name=tomcat update_cachestate=present
+    apt: name=tomcat update_cache= yes state=present
   - name: start tomcat
     service: name=tomcat state=started
   - name: install docker
