@@ -4,7 +4,7 @@
   become_user: root
   tasks:
   - name: install httpd
-    apt: name=httpd state=present
+    apt: name=apache2 update_cache=yes state=latest
   - name: start httpd
     service: name=httpd state=started
   - name: deploy html file
